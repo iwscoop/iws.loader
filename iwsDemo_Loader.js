@@ -30,24 +30,27 @@ function Clear(){
     document.getElementById('board').innerHTML = '';
 }
 
+
+function Add(arrbuffer){
+    var type = checkRadioValue("createType");
+    if (type === "img") {
+        binaryToImage(arrbuffer);
+    } else if (type === "canvas") {
+        binaryToCanvas(arrbuffer);
+    }
+}
+
 //이미지를 로드 합니다.
 function LoadImage(e) {
-    var input = event.target;
+    var input = e.target;
 
     var reader = new FileReader();
-
-    reader.readAsArrayBuffer(input.files[0]);
     reader.onload = function () {
-
-        var type = checkRadioValue("createType");
-        if (type === "img") {
-            binaryToImage(reader.result);
-        } else if (type === "canvas") {
-            binaryToCanvas(reader.result);
-        }
-
+        Add(reader.result);
     };
+    reader.readAsArrayBuffer(input.files[0]);
 }
+
 
 //img element를 생성할지 canvas element를 생성할지 여부
 function checkRadioValue(objName) {
@@ -84,4 +87,24 @@ function binaryToCanvas(buffer){
 }
 
 window.onload = function(){
+    document.addEventListener("dragover", function(e) {
+        e.dataTransfer.dropEffect = "copy";
+        e.preventDefault();
+    });
+
+    document.addEventListener("drop", function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var files = e.dataTransfer.files; // Array of all files
+        if(files.length>0){
+            var file = files[0];
+            var reader = new FileReader();
+            reader.onload = function() {
+                Add(reader.result);
+            };
+            reader.readAsArrayBuffer(file);
+        }
+    });
+
+
 };

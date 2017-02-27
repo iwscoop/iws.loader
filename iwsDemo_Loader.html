@@ -26,7 +26,8 @@
         <div class="demo-intro">
 
             <h2>
-                Select an image file to view!
+                Drag files or Select an image file to view! <br>
+                <input id="loadimage" type="file"  onchange="LoadImage(event)"/>
             </h2>
             <input type="radio" name="createType" value="img" checked="true">Image Element Create<br />
             <input type="radio" name="createType" value="canvas">Canvas Element Create<br />
@@ -36,7 +37,7 @@
 
         <nav class="row">
             <ul>
-                <li><input type="file"  onchange="LoadImage(event)"/></li>
+
                 <li><a href="#" onclick="Clear()">Clear</a></li>
             </ul>
         </nav>
