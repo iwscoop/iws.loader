@@ -84,22 +84,4 @@ function binaryToCanvas(buffer){
 }
 
 window.onload = function(){
-    // // 이미지파일 열기
-    // $('#fileLoad').on ('change', function(e){
-    //     var file = this.files[0];
-    //
-    //     var reader = new FileReader();
-    //
-    //     reader.readAsArrayBuffer(file);
-    //     reader.onload = function() {
-    //
-    //         var type = checkRadioValue("createType");
-    //         if(type === "img"){
-    //             binaryToImage(reader.result);
-    //         } else if(type === "canvas"){
-    //             binaryToCanvas(reader.result);
-    //         }
-    //
-    //     };
-    // });
 };
