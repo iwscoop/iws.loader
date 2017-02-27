@@ -1,5 +1,6 @@
 # iws.loader
 
+Demo - [http://www.iwscoop.co.kr/solution/demo](http://www.iwscoop.co.kr/solution/demo/iws_loader.html)
 ### 특징
     다양한 이미지 포멧 로딩.
     이미지로딩 결과로 base64 스트링 제공. 또는 Canvas에서 직접 사용 가능한 픽셀 데이터 제공.
