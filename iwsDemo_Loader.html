@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="./engine/IWSImageLib_min.js"></script>
+    <script src="./iws.loader_min.js"></script>
+
+    <script src="./iwsDemo_Loader.js"></script>
+
+    <style>
+        .row{
+            float:left;
+        }
+        .demo-intro {
+            padding: 5px 10px;
+            background: rgba(246,127,0,0.3);
+            margin: 10px 0 20px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="main_header">
+        <div class="demo-intro">
+
+            <h2>
+                Select an image file to view!
+            </h2>
+            <input type="radio" name="createType" value="img" checked="true">Image Element Create<br />
+            <input type="radio" name="createType" value="canvas">Canvas Element Create<br />
+
+        </div>
+
+
+        <nav class="row">
+            <ul>
+                <li><input type="file"  onchange="LoadImage(event)"/></li>
+                <li><a href="#" onclick="Clear()">Clear</a></li>
+            </ul>
+        </nav>
+
+
+    </div>
+    <div id="content">
+        <div id="board" style="width:720px"></div>
+    </div>
+</body>
+</html>
